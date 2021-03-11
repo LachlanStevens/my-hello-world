@@ -36,14 +36,14 @@ Apify.main(async () => {
         const BusinessNameElement = await page.waitForSelector('#ctl00_generalContentPlaceHolder_LicenceInfoControl1_lbLicenceName', { "timeout": 1000});
         BusinessNameValue = await BusinessNameElement.evaluate(el => el.textContent);
     } catch(err){
-        //console.log(err);
+        console.log(err);
     }
     
     try {
         const BusinessAddressElement = await page.waitForSelector('#ctl00_generalContentPlaceHolder_LicenceInfoControl1_lbBusinessAddress', { "timeout": 1000});
         BusinessAddressValue = await BusinessAddressElement.evaluate(el => el.textContent);
     } catch(err){
-        //console.log(err);
+        console.log(err);
     }
     
     try {
@@ -79,7 +79,8 @@ Apify.main(async () => {
         "TradingNameValue": TradingNameValue,
         "MRCategoryValue": MRCategoryValue,
         "ABNValue": ABNValue, 
-        "ACNValue": ACNValue
+        "ACNValue": ACNValue,
+        "html": await page.evaluate(() => document.body.outerHTML)
     };
     console.log(results);
 
