@@ -30,7 +30,7 @@ Apify.main(async () => {
     
     await page.type('#ctl00_generalContentPlaceHolder_SearchControl_txtLicenceNo', '1317628');
     await page.click('#ctl00_generalContentPlaceHolder_SearchControl_btnSearch');
-    
+    // this is my comment
     var BusinessNameValue, BusinessAddressValue, TradingNameValue, MRCategoryValue, ABNValue, ACNValue = "";
     try{
         const BusinessNameElement = await page.waitForSelector('#ctl00_generalContentPlaceHolder_LicenceInfoControl1_lbLicenceName', { "timeout": 2000});
