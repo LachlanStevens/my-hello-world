@@ -33,42 +33,42 @@ Apify.main(async () => {
     
     var BusinessNameValue, BusinessAddressValue, TradingNameValue, MRCategoryValue, ABNValue, ACNValue = "";
     try{
-        const BusinessNameElement = await page.waitForSelector('#ctl00_generalContentPlaceHolder_LicenceInfoControl1_lbLicenceName', { "timeout": 1000});
+        const BusinessNameElement = await page.waitForSelector('#ctl00_generalContentPlaceHolder_LicenceInfoControl1_lbLicenceName', { "timeout": 2000});
         BusinessNameValue = await BusinessNameElement.evaluate(el => el.textContent);
     } catch(err){
         console.log(err);
     }
     
     try {
-        const BusinessAddressElement = await page.waitForSelector('#ctl00_generalContentPlaceHolder_LicenceInfoControl1_lbBusinessAddress', { "timeout": 1000});
+        const BusinessAddressElement = await page.waitForSelector('#ctl00_generalContentPlaceHolder_LicenceInfoControl1_lbBusinessAddress', { "timeout": 2000});
         BusinessAddressValue = await BusinessAddressElement.evaluate(el => el.textContent);
     } catch(err){
         console.log(err);
     }
     
     try {
-        const TradingNameElement = await page.waitForSelector('#ctl00_generalContentPlaceHolder_LicenceInfoControl1_lbTradingName', { "timeout": 1000 });
+        const TradingNameElement = await page.waitForSelector('#ctl00_generalContentPlaceHolder_LicenceInfoControl1_lbTradingName', { "timeout": 2000 });
         TradingNameValue = await TradingNameElement.evaluate(el => el.textContent);
     } catch(err){
         //console.log(err);
     }
 
     try {
-        const MRCategoryElement = await page.waitForSelector('#ctl00_generalContentPlaceHolder_LicenceInfoControl1_lblAATOCategory', { "timeout": 1000});
+        const MRCategoryElement = await page.waitForSelector('#ctl00_generalContentPlaceHolder_LicenceInfoControl1_lblAATOCategory', { "timeout": 2000});
         MRCategoryValue = await MRCategoryElement.evaluate(el => el.textContent);
     } catch(err){
         //console.log(err);
     }
     
     try {
-        const ABNElement = await page.waitForSelector('#ctl00_generalContentPlaceHolder_LicenceInfoControl1_lblABN', { "timeout": 1000});
+        const ABNElement = await page.waitForSelector('#ctl00_generalContentPlaceHolder_LicenceInfoControl1_lblABN', { "timeout": 2000});
         ABNValue = await ABNElement.evaluate(el => el.textContent);
     } catch(err){
         //console.log(err);
     }
     
     try {
-        const ACNElement = await page.waitForSelector('#ctl00_generalContentPlaceHolder_LicenceInfoControl1_lblACN', { "timeout": 1000});
+        const ACNElement = await page.waitForSelector('#ctl00_generalContentPlaceHolder_LicenceInfoControl1_lblACN', { "timeout": 2000});
         ACNValue = await ACNElement.evaluate(el => el.textContent);
     } catch(err){
         //console.log(err);
